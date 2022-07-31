@@ -54,6 +54,10 @@ return [
             'path' => storage_path('framework/cache/data'),
         ],
 
+        'none' => [
+            'driver' => 'null',
+        ],
+
         'memcached' => [
             'driver' => 'memcached',
             'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
@@ -71,6 +75,7 @@ return [
                     'weight' => 100,
                 ],
             ],
+
         ],
 
         'redis' => [
