@@ -8,6 +8,7 @@
         <form class="form" method="post" action="{{ route('login') }}">
             @csrf
 
+            @include('alerts.success', ['key' => 'password_status'])
             <div class="card card-login card-white">
                 <div class="card-header">
                     <img src="{{ asset('white') }}/img/card-primary.png" alt="">
@@ -41,11 +42,11 @@
                             <a href="{{ route('register') }}" class="link footer-link">{{ _('Create Account') }}</a>
                         </h6>
                     </div> --}}
-                    {{-- <div class="pull-right">
+                    <div class="pull-right">
                         <h6>
                             <a href="{{ route('password.request') }}" class="link footer-link">{{ _('Forgot password?') }}</a>
                         </h6>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </form>

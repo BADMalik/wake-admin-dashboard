@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="col-lg-5 col-md-7 ml-auto mr-auto">
-        <form class="form" method="post" action="{{ route('password.email') }}">
+    @include('alerts.warning', ['key' => 'warning'])
+        <form class="form" method="post" action="{{ route('password.otp-email') }}">
             @csrf
 
             <div class="card card-login card-white">
@@ -11,7 +12,6 @@
                     <h1 class="card-title">{{ _('Reset password') }}</h1>
                 </div>
                 <div class="card-body">
-                    @include('alerts.success')
 
                     <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                         <div class="input-group-prepend">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">{{ _('Send Password Reset Link') }}</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">{{ _('Send OTP') }}</button>
                 </div>
             </div>
         </form>

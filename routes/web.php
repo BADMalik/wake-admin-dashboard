@@ -41,3 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
+
+Route::post('password/otp-email',  ['as' => 'password.otp-email',     'uses' => 'App\Http\Controllers\PasswordResetController@otpEmail']);
+Route::get('password/otp',         ['as' => 'password.otp.view',      'uses' => 'App\Http\Controllers\PasswordResetController@otpView']);
+Route::post('password/otp',        ['as' => 'password.otp',           'uses' => 'App\Http\Controllers\PasswordResetController@otp']);
+Route::get('password/change',      ['as' => 'password.change.view',   'uses' => 'App\Http\Controllers\PasswordResetController@changeView']);
+Route::post('password/change',     ['as' => 'password.change',        'uses' => 'App\Http\Controllers\PasswordResetController@change']);  
