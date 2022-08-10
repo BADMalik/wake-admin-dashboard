@@ -1,4 +1,4 @@
-@extends('layouts.app', ['class' => 'login-page', 'page' => _('Login Page'), 'contentClass' => 'login-page'])
+@extends('layouts.app', ['class' => 'login-page', 'page' => _('Login'), 'contentClass' => 'login-page'])
 
 @section('content')
     <div class="col-md-10 text-center ml-auto mr-auto">
@@ -15,7 +15,7 @@
                     <h1 class="card-title">{{ _('Log in') }}</h1>
                 </div>
                 <div class="card-body">
-                    <p class="text-dark">Sign in with <strong>admin@white.com</strong> and the password <strong>secret</strong></p>
+                    <p class="text-dark">Sign in with <strong>your email</strong> and the password</p>
                     <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" href="" class="btn btn-primary btn-lg btn-block">{{ _('Get Started') }}</button>
+                    <button type="submit" href="" class="btn btn-primary btn-lg btn-block">{{ _('Login') }}</button>
                     {{-- <div class="pull-left">
                         <h6>
                             <a href="{{ route('register') }}" class="link footer-link">{{ _('Create Account') }}</a>
