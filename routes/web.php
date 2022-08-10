@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+    Route::resource('reports', ReportController::class);
 });
 
 
@@ -47,3 +49,4 @@ Route::get('password/otp',         ['as' => 'password.otp.view',      'uses' => 
 Route::post('password/otp',        ['as' => 'password.otp',           'uses' => 'App\Http\Controllers\PasswordResetController@otp']);
 Route::get('password/change',      ['as' => 'password.change.view',   'uses' => 'App\Http\Controllers\PasswordResetController@changeView']);
 Route::post('password/change',     ['as' => 'password.change',        'uses' => 'App\Http\Controllers\PasswordResetController@change']);  
+
